@@ -54,7 +54,7 @@ padding-top: 30px;
     border: 2px white solid;
   }
   
-  #filter{     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 2.6px 2.6px 2.6px;  
+  .filter{     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 2.6px 2.6px 2.6px;  
 
     width: 250px;
     height: 40px;
@@ -95,7 +95,7 @@ border: none;
     .input-group-prepend.dark-mode{
       border: 2px hsl(209, 23%, 22%) solid;}
 
-    #filter.dark-mode{
+    .filter.dark-mode{
     border: none;
     color: white;
       background-color: hsl(209, 23%, 22%);
@@ -159,7 +159,7 @@ border: none;
 
   }
 
-  #filter{
+  .filter{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     width: 135px;
     height: 40px;

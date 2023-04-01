@@ -26,23 +26,25 @@
             <i class="fa fa-search"></i>
           </span>
         </div>
-        <input type="text" id="search-country" placeholder="Search by country...">
+        <input type="text" class="form-control" id="search-country" placeholder="Search for a country">
+      </div>
+       
+    <div class="filter">
+        <select name="FilterCountries" class = "filter" id="filter-region">
+            <option value="" selected = "selected"> Filter by Region </option>
+            <option value="Africa">Africa</option>
+            <option value="America">America</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceaina">Oceaina</option>
+        </select>
     </div>
+ </div>
+ <div class="container" >
  
-  </div>
-  <select id="filter-region">
-    <option value="">--All--</option>
-    <option value="Asia">Asia</option>
-    <option value="Europe">Europe</option>
-    <option value="Africa">Africa</option>
-    <option value="Americas">Americas</option>
-    <option value="Oceania">Oceania</option>
-  </select>
-  
-  <div class="grid-container" id="country-grid">
-    <!-- Country information will be displayed here -->
-  </div>
-  
+  <!-- Add more grid items for additional information if needed -->
+<div id="country-grid"></div></div>
+
 
  <script src="app.js"></script>
 </body>
