@@ -5,6 +5,7 @@ function toggleMode() {
     let text = document.querySelector("#mode-toggle")
     let group = document.querySelector(".input-group-prepend")
     var input = document.querySelector(".input-group-text")
+    const bodys = document.querySelector('#body');
     let filter = document.querySelector("#filter")
     head.classList.toggle("dark-mode");
     text.classList.toggle("dark-mode");
@@ -13,25 +14,21 @@ function toggleMode() {
     input.classList.toggle("dark-mode");
     group.classList.toggle("dark-mode");
     filter.classList.toggle("dark-mode");
+    bodys.classList.toggle('dark-mode');
 
   }
  
-// Define variables for search and filter inputs
 const searchCountryInput = document.getElementById('search-country');
 const filterRegionSelect = document.getElementById('filter-region');
 
-// Define variable for country grid container
 const countryGrid = document.getElementById('country-grid');
 
-// Load data from local JSON file
 fetch('data.json')
   .then(response => response.json())
   .then(data => {
 
-    // Render initial country grid
     renderCountryGrid(data);
 
-    // Add event listeners to search and filter inputs
     searchCountryInput.addEventListener('input', () => {
       const searchTerm = searchCountryInput.value.toLowerCase().trim();
       const filteredData = data.filter(country => country.name.toLowerCase().includes(searchTerm));
@@ -47,21 +44,48 @@ fetch('data.json')
   })
   .catch(error => console.log(error));
 
-// Render country grid based on provided data
-function renderCountryGrid(data) {
-  let html = '';
-  for (const country of data) {
-    html += '<div class="grid-item">';
-    html += '<img class="flag-img" src="' + country.flags.svg + '">';
-    html += '<div class="country-name">' + country.name + '</div>';
-    html += '<div class="country-region">' + country.region + '</div>';
-    html += '<div class="country-population">' + country.population + '</div>';
-    html += '<div class="country-capital">' + country.capital + '</div>';
-    html += '</div>';
+  function renderCountryGrid(data) {
+    let html = '';
+    for (const country of data) {
+      html += '<a href="country.html?name=' + country.name + '" class="grid-item">';
+      html += '<img class="flag-img" src="' + country.flags.svg + '">';
+      html += '<div class="country-name">' + country.name + '</div>';
+      html += '<div class="country-region">'+ "<span> Region: </span>" + "  " + country.region + '</div>';
+      html += '<div class="country-population">' + "<span> Population: </span>" + "  " + country.population + '</div>';
+      html += '<div class="country-capital">' + "<span> Capital: </span>" + "  " + country.capital + '</div>';
+      html += '</a>';
+    }
+    countryGrid.innerHTML = html;
   }
-  countryGrid.innerHTML = html;
-}
-
   
+  const urlParams = new URLSearchParams(window.location.search);
+  const countryName = urlParams.get('name');
+  
+  fetch('https://restcountries.com/v2/name/' + countryName + '?fullText=true')
+    .then(response => response.json())
+    .then(data => {
+      const country = data[0]; // assuming that the API returns an array with one element
+      const countryNameElement = document.getElementById('country-name');
+      countryNameElement.textContent = country.name;
+      const nativeElement = document.getElementById('nativename');
+      nativeElement.textContent = country.nativeName;
+      const populationElement = document.getElementById('population');
+      populationElement.textContent = country.population;
+      const regionElement = document.getElementById('region');
+      regionElement.textContent = country.region;
+      const capitalElement = document.getElementById('capital');
+      capitalElement.textContent = country.capital;
+      const subElement = document.getElementById('sub-region');
+      subElement.textContent = country.subregion;
+      const flagElement = document.getElementById('flag-img');
+      flagElement.src = country.flags.svg;
+      const currenciesElement = document.getElementById('currencies');
+      currenciesElement.textContent = country.currencies[0].code;
+      const languageElement = document.getElementById('language');
+      languageElement.textContent = country.languages[0].name;
+      const topElement = document.getElementById('top');
+      topElement.textContent = country.topLevelDomain
+    })
+    .catch(error => console.log(error));
   
   

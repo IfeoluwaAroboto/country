@@ -11,6 +11,9 @@
   font-family: 'Montserrat', sans-serif;
 font-weight: 800;
 }
+span{
+  font-weight: 600;
+}
 body{
     margin: 0px;
 }
@@ -24,6 +27,7 @@ margin: 0px 40px 0px 40px;
 padding-top: 30px;
 
 }
+
 #mode-toggle{
  background-color: white;
  border: none;
@@ -101,13 +105,24 @@ border: none;
       background-color: hsl(209, 23%, 22%);
 
     }
+    #body.dark-mode {
+      background-color: #333;
+      color: #f0f0f0;
+    }
+    .grid-item.dark-mode{
+      color: white;
+  
+      }
     #country-grid {
  padding-top: 60px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
     }
-    
+    a.grid-item {
+ text-decoration: none;
+ color: black;
+    }
     .grid-container {
       width: calc(26% - 10px);
       margin-bottom: 20px;
@@ -130,9 +145,35 @@ border: none;
       padding-bottom: 9px;
     }
     
-   
-    
-    
+    .info-detail{
+      display: flex;
+     padding-top: 40px;
+      
+      justify-content: space-around;
+    }
+    #flag-img{
+      width: 40%;
+    }
+  #info{
+    padding-top: 60px;
+  }  
+    .flex{
+      display: flex;
+      gap: 7px;
+    }
+    .sub-info{
+      padding-top: 80px;
+    }
+    .button {
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 2.6px 2.6px 2.6px;  
+      background-color: white;
+      border: none;
+  
+    }
+    button a{
+      text-decoration: none;
+      color: black;
+    }
 @media screen and (max-width: 1200px) { 
   .head{
     padding: 15px;
@@ -200,4 +241,16 @@ border: none;
           width: 130px;
           padding-bottom: 9px;
         }
+}
+@media screen and (max-width: 700px) { 
+  
+  .info-detail{
+    display: flex;
+   padding: 40px;
+flex-direction: column;
+
+  }
+      #flag-img{
+      width: 70%;
+    }
 }
