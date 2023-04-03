@@ -1,22 +1,27 @@
 function toggleMode() {
-    var body = document.body;
-    let head = document.querySelector(".head")
-    let form = document.querySelector(".form-control")
-    let text = document.querySelector("#mode-toggle")
-    let group = document.querySelector(".input-group-prepend")
-    var input = document.querySelector(".input-group-text")
-    const bodys = document.querySelector('#body');
-    let filter = document.querySelector("#filter")
-    head.classList.toggle("dark-mode");
-    text.classList.toggle("dark-mode");
-    form.classList.toggle("dark-mode");
-    body.classList.toggle("dark-mode");
-    input.classList.toggle("dark-mode");
-    group.classList.toggle("dark-mode");
-    filter.classList.toggle("dark-mode");
-    bodys.classList.toggle('dark-mode');
+  const body = document.getElementsByTagName("body")[0];
+  const head = document.getElementsByClassName("head")[0];
+  const button = document.getElementsByClassName("button")[0];
+  const info = document.getElementsByClassName("info-detail")[0];
+  const grid  = document.querySelector("a.grid-item")
+  const input  = document.querySelector(".input-group-prepend")
+  const form  = document.querySelector(".form-control")
+  const group  = document.querySelector(".input-group-text")
+  const btn = document.querySelector("#mode-toggle")
+  const subinfo = document.getElementsByClassName("sub-info")[0];
+  input.classList.toggle("dark-mode");
+  body.classList.toggle("dark-mode");
+  head.classList.toggle("dark-mode"); 
+  grid.classList.toggle("dark-mode"); 
+  button.classList.toggle("dark-mode");
+  btn.classList.toggle("dark-mode");
+  info.classList.toggle("dark-mode");
+  form.classList.toggle("dark-mode");
+  group.classList.toggle("dark-mode");
+  subinfo.classList.toggle("dark-mode");
+  
+}
 
-  }
  
 const searchCountryInput = document.getElementById('search-country');
 const filterRegionSelect = document.getElementById('filter-region');
@@ -64,7 +69,7 @@ fetch('data.json')
   fetch('https://restcountries.com/v2/name/' + countryName + '?fullText=true')
     .then(response => response.json())
     .then(data => {
-      const country = data[0]; // assuming that the API returns an array with one element
+      const country = data[0]; 
       const countryNameElement = document.getElementById('country-name');
       countryNameElement.textContent = country.name;
       const nativeElement = document.getElementById('nativename');

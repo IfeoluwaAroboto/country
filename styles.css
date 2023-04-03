@@ -73,48 +73,82 @@ padding-top: 30px;
     color: black;
   }
   
-  body.dark-mode {
-    background-color: hsl(209, 23%, 22%);
-    color: white;
-  }
-  .form-control.dark-mode{ color:hsl(0, 0%, 100%) ;
-    border: 2px hsl(209, 23%, 22%) solid;
+body.dark-mode {
+  background-color: #2b3945;
 
-    background-color: hsl(209, 23%, 22%);
+  color: #f5f5f5;
+}
 
-  }
-  .head.dark-mode{ color:hsl(0, 0%, 100%) ;
-background-color: hsl(207, 26%, 17%);
+.head.dark-mode {
+  background-color: #202c37;
+  color: #f5f5f5;
+}
 
-  }
-  #mode-toggle.dark-mode{ color:hsl(0, 0%, 100%) ;
-    background-color: hsl(207, 26%, 17%);
-border: none;
-  }
-.input-group-text.dark-mode{
-  color:hsl(0, 0%, 100%) ;
-  background-color: hsl(209, 23%, 22%);
-border: none;
-    border: 2px hsl(209, 23%, 22%) solid;}
-    .input-group-prepend.dark-mode{
-      border: 2px hsl(209, 23%, 22%) solid;}
+.button.dark-mode a {
+  color: #202c37;
+}
+#mode-toggle.dark-mode{
+  background-color: #202c37;
+  color: white;
 
-    .filter.dark-mode{
-    border: none;
-    color: white;
-      background-color: hsl(209, 23%, 22%);
+}
+.info-detail.dark-mode {
+  background-color: #2b3945;
+  color: #f5f5f5;
+}
 
+.info-detail.dark-mode p {
+  color: #f5f5f5;
+}
+
+.sub-info.dark-mode p {
+  color: #f5f5f5;
+}
+.dark-mode {
+  background-color: #2b3945;
+  color: #f2f2f2;
+}
+
+.dark-mode .form-control {
+  background-color: #2b3945;
+  color: #f2f2f2;
+}
+
+.dark-mode .filters {
+  background-color: #2b3945;
+  color: #f2f2f2;
+}
+.dark-mode #body {
+  background-color: #2b3945;
+  color: #fafafa;
+}
+.dark-mode a.grid-item {
+  color: #fafafa;
+
+}
+.dark-mode #mode-toggle {
+  background-color: #202c37;
+  color: #fafafa;
+}
+.dark-mode .form-control {
+  background-color: #202c37;
+  border: 2px #202c37 solid;
+
+  color: #fafafa;
+}
+.dark-mode .input-group-prepend{
+  background-color: #202c37;
+border: 2px #202c37 solid;
+}
+.dark-mode .input-group-text{ 
+  color: white;
+  background-color: #202c37;
+border: 2px #202c37 solid;
+}
+    .grid-item{
+      padding-top: 20px;
     }
-    #body.dark-mode {
-      background-color: #333;
-      color: #f0f0f0;
-    }
-    .grid-item.dark-mode{
-      color: white;
-  
-      }
-    #country-grid {
- padding-top: 60px;
+    #country-grid { padding-top: 60px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -174,6 +208,7 @@ border: none;
       text-decoration: none;
       color: black;
     }
+ 
 @media screen and (max-width: 1200px) { 
   .head{
     padding: 15px;
@@ -253,4 +288,13 @@ flex-direction: column;
       #flag-img{
       width: 70%;
     }
+    .grid-container {
+      width: calc(45% - 10px);
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    
 }
