@@ -122,8 +122,9 @@ body.dark-mode {
   background-color: #2b3945;
   color: #fafafa;
 }
-.dark-mode a.grid-item {
+.dark-mode a.card {
   color: #fafafa;
+  background-color:  #2b3945 ;
 
 }
 .dark-mode #mode-toggle {
@@ -145,17 +146,16 @@ border: 2px #202c37 solid;
   background-color: #202c37;
 border: 2px #202c37 solid;
 }
-    .grid-item{
-      padding-top: 20px;
-    }
+    
     #country-grid { padding-top: 60px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
     }
-    a.grid-item {
+    a.card {
  text-decoration: none;
  color: black;
+ 
     }
     .grid-container {
       width: calc(26% - 10px);
@@ -208,6 +208,47 @@ border: 2px #202c37 solid;
       text-decoration: none;
       color: black;
     }
+    .card-container {
+      display: flex;
+      
+      justify-content: space-between;
+      padding: 2rem;
+    }
+    
+    .card {
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      width: calc(30.33% - 2rem);
+      margin-bottom: 2rem;
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: pointer;
+    
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    a.card{
+      padding:9px;
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    #card-content { display:flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 2rem;
+    }
+    
+    .card h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
  
 @media screen and (max-width: 1200px) { 
   .head{
@@ -252,21 +293,8 @@ border: 2px #202c37 solid;
     padding-top: 30px;
     
     }
-    #country-grid {
-      padding-top: 60px;
-           display: flex;
-           flex-wrap: wrap;
-           justify-content: space-between;
-         }
-         
-         .grid-container {
-           width: calc(45% - 10px);
-           margin-bottom: 20px;
-           padding: 10px;
-           border: 1px solid #ccc;
-           border-radius: 5px;
-           box-sizing: border-box;
-         }
+  
+  
          
          .country-name {
            font-weight: bold;
@@ -276,8 +304,23 @@ border: 2px #202c37 solid;
           width: 130px;
           padding-bottom: 9px;
         }
+        .card {
+          background-color: white;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          width: calc(45.33% - 2rem);
+          margin-bottom: 2rem;
+          border-radius: 5px;
+          overflow: hidden;
+          cursor: pointer;
+        }
+        #card-content { display:flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          padding: 2rem;
+        }
+        
 }
-@media screen and (max-width: 700px) { 
+@media screen and (max-width: 600px) { 
   
   .info-detail{
     display: flex;
@@ -288,13 +331,19 @@ flex-direction: column;
       #flag-img{
       width: 70%;
     }
-    .grid-container {
-      width: calc(45% - 10px);
-      margin-bottom: 20px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-sizing: border-box;
-    }
     
+    .card {
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      width: calc(99.33% - 2rem);
+      margin-bottom: 2rem;
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    #card-content { display:flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 2rem;
+    }
 }

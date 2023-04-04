@@ -26,7 +26,7 @@ function toggleMode() {
 const searchCountryInput = document.getElementById('search-country');
 const filterRegionSelect = document.getElementById('filter-region');
 
-const countryGrid = document.getElementById('country-grid');
+const countryGrid = document.getElementById('card-content');
 
 fetch('data.json')
   .then(response => response.json())
@@ -52,7 +52,7 @@ fetch('data.json')
   function renderCountryGrid(data) {
     let html = '';
     for (const country of data) {
-      html += '<a href="country.html?name=' + country.name + '" class="grid-item">';
+      html += '<a href="country.html?name=' + country.name + '" class="card">';
       html += '<img class="flag-img" src="' + country.flags.svg + '">';
       html += '<div class="country-name">' + country.name + '</div>';
       html += '<div class="country-region">'+ "<span> Region: </span>" + "  " + country.region + '</div>';
